@@ -321,12 +321,15 @@ int main() {
 ```
 
 
-## References
+## References and Other Additional Reading
+* [Programming Process: compiled vs. interpreted, and java](http://www2.hawaii.edu/~takebaya/ics111/process_of_programming/process_of_programming.html#:~:text=A%20compiler%20takes%20the%20program,to%20create%20an%20executable%20file.)
+* [Do programming language compilers first translate to assembly or directly to machine code?](https://stackoverflow.com/questions/845355/do-programming-language-compilers-first-translate-to-assembly-or-directly-to-mac)
+* [Does a compiler always produce an assembly code?](https://stackoverflow.com/questions/14039843/does-a-compiler-always-produce-an-assembly-code)
 * [How to compile and run a C/C++ program](https://www.cyberciti.biz/faq/howto-compile-and-run-c-cplusplus-code-in-linux/)
 * [Assembler output from C/C++](https://stackoverflow.com/questions/137038/how-do-you-get-assembler-output-from-c-c-source-in-gcc)
-
-
-
-
-
-
+* [Writing a Compiler, Part 1](https://norasandler.com/2017/11/29/Write-a-Compiler.html)
+* [How to Write your Own Compiler, Part 1](https://visualstudiomagazine.com/articles/2014/05/01/how-to-write-your-own-compiler-part-1.aspx)
+* [How to write a very basic compiler](https://softwareengineering.stackexchange.com/questions/165543/how-to-write-a-very-basic-compiler)
+* [Building your own programming Language from Scratch](https://hackernoon.com/building-your-own-programming-language-from-scratch)
+* [GNU GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection)
+* [LLVM](https://en.wikipedia.org/wiki/LLVM)
