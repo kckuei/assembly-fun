@@ -1,4 +1,4 @@
-# Generating Assembly from HLL
+# Generating Assembly from a High Level Language
 
 ## General Example
 How might one implement the high-level language (HLL) code block shown below (python) in assembly? 
