@@ -35,17 +35,17 @@ _Finished:
 
 ### Compiling and Generating Assembly with GCC
 
-**To compile to executable:**
+To compile to executable:
 ```console
 gcc <fname>.c -o <fname>
 ```
 
-**To run the executable:**
+To run the executable:
 ```console
 ./<fname>
 ```
 
-**To generate the assembly file:**
+To generate the assembly file:
 ```console
 gcc -S <fname>.c
 ```
@@ -122,6 +122,7 @@ main:
 ```
 
 **Focusing just on the important bits...**
+
 Note that:
 * x : -4(%rbp)
 * prop1 : -12(%rbp)
@@ -217,6 +218,7 @@ main:
 
 
 **Focusing just on the important bits...**
+
 Note that:
 * sum : 	-8(%rbp)
 * i   : 	-4(%rbp)
