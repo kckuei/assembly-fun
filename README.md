@@ -252,7 +252,73 @@ Note that:
 ## C++ Example in Windows with Visual Studio
 You can also access/view the assembly code in Visual Studio via the debugger. Just set a breakpoint and open the dissasembly window when execution of the program is paused. 
 
+Set a breakpoint.
+<img src="imgs/Debug1.png" width="500">
 
+Start debugging from Debug dropdown, or hit F5.
+<img src="imgs/Debug2.png" width="500">
+
+Open the Dissassembly window to view the assembly code.
+<img src="imgs/Debug3.png" width="500">
+
+
+C++ Code
+```C++
+int main() {
+	int k = 0;
+	for (int i = 1; i <= 5; i++>) {
+		k = k + i;
+	}
+}
+```
+
+Dissasembly Output
+```assembly
+00FB174F  int         3  
+--- C:\Users\kkuei\Downloads\Test\Test\Source.cpp ------------------------------
+int main() {
+00FB1750  push        ebp  
+00FB1751  mov         ebp,esp  
+00FB1753  sub         esp,0D8h  
+00FB1759  push        ebx  
+00FB175A  push        esi  
+00FB175B  push        edi  
+00FB175C  lea         edi,[ebp-18h]  
+00FB175F  mov         ecx,6  
+00FB1764  mov         eax,0CCCCCCCCh  
+00FB1769  rep stos    dword ptr es:[edi]  
+00FB176B  mov         ecx,offset _AC5A0FFB_Source@cpp (0FBC000h)  
+00FB1770  call        @__CheckForDebuggerJustMyCode@4 (0FB1307h)  
+    int k = 0;
+00FB1775  mov         dword ptr [k],0  
+    for (int i = 1; i <= 5; i++) {
+00FB177C  mov         dword ptr [ebp-14h],1  
+00FB1783  jmp         __$EncStackInitStart+32h (0FB178Eh)  
+00FB1785  mov         eax,dword ptr [ebp-14h]  
+00FB1788  add         eax,1  
+00FB178B  mov         dword ptr [ebp-14h],eax  
+00FB178E  cmp         dword ptr [ebp-14h],5  
+00FB1792  jg          __$EncStackInitStart+43h (0FB179Fh)  
+        k = k + i;
+00FB1794  mov         eax,dword ptr [k]  
+00FB1797  add         eax,dword ptr [ebp-14h]  
+00FB179A  mov         dword ptr [k],eax  
+    }
+00FB179D  jmp         __$EncStackInitStart+29h (0FB1785h)  
+}
+00FB179F  xor         eax,eax  
+00FB17A1  pop         edi  
+00FB17A2  pop         esi  
+00FB17A3  pop         ebx  
+00FB17A4  add         esp,0D8h  
+00FB17AA  cmp         ebp,esp  
+00FB17AC  call        __RTC_CheckEsp (0FB1230h)  
+00FB17B1  mov         esp,ebp  
+00FB17B3  pop         ebp  
+00FB17B4  ret  
+--- No source file -------------------------------------------------------------
+00FB17B5  int         3  
+```
 
 
 ## References
