@@ -3,7 +3,7 @@
 ## General Example
 How might one implement the high-level language (HLL) code block shown below (python) in assembly? 
 
-Generic code
+### High-Level Language (Python)
 ```python
 op1 = 5
 op2 = 10
@@ -14,7 +14,7 @@ else:
     x = 2
 ```
 
-x86 MASM code
+### Assembly (x86 MASM code)
 ```assembly
 .data
 op1	DWORD	5
@@ -35,17 +35,17 @@ _Finished:
 
 ### Compiling and Generating Assembly with GCC
 
-To compile to executable
+**To compile to executable:**
 ```console
 gcc <fname>.c -o <fname>
 ```
 
-To run the executable
+**To run the executable:**
 ```console
 ./<fname>
 ```
 
-To generate the assembly file
+**To generate the assembly file:**
 ```console
 gcc -S <fname>.c
 ```
@@ -54,7 +54,7 @@ gcc -S <fname>.c
 
 #### Example 1 - Flow Control
 
-Code in C
+**Code in C**
 ```C
 int main(void)
 {
@@ -69,7 +69,7 @@ int main(void)
 }
 ```
 
-GCC Generated Assembly File
+**GCC Generated Assembly File**
 ```assembly
 	.file	"demo_ifelse.c"
 	.text
@@ -121,7 +121,12 @@ main:
 4:
 ```
 
-Focusing just on the important bits...
+**Focusing just on the important bits...**
+Note that:
+* x : -4(%rbp)
+* prop1 : -12(%rbp)
+* prop2 : -8(%rbp)
+
 ```assembly
 ...
 .LFB0:
@@ -144,17 +149,9 @@ Focusing just on the important bits...
 ...
 ```
 
-
-x : -4(%rbp)
-prop1 : -12(%rbp)
-prop2 : -8(%rbp)
-
-
-
 #### Example 2 - Repetition Structures
 
-
-Code in C
+**Code in C**
 ```C
 int main(void)
 {
@@ -165,7 +162,7 @@ int main(void)
 }
 ```
 
-GCC Generated Assembly File
+**GCC Generated Assembly File**
 ```assembly
 	.file	"demo_repetition.c"
 	.text
@@ -219,7 +216,10 @@ main:
 
 
 
-Focusing just on the important bits...
+**Focusing just on the important bits...**
+Note that:
+* sum : 	-8(%rbp)
+* i   : 	-4(%rbp)
 ```assembly
 .LFB0:
 	.cfi_startproc
@@ -245,9 +245,6 @@ Focusing just on the important bits...
 	ret
 	.cfi_endproc
 ```
-
-sum : 	-8(%rbp)
-i   : 	-4(%rbp)
 
 
 ## C++ Example in Windows with Visual Studio
